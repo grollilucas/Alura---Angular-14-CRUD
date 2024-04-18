@@ -8,7 +8,7 @@
     <input type="textarea" class="input" id="pensamento" formControlName="conteudo" placeholder="Digite o pensamento" />
 
     <div class="mensagem__erro"
-    *ngIf="formulario.get('conteudo')?.errors && formulario.get('conteudo')?.touched">
+    *ngIf="formulario.get('conteudo')?.errors && formulario.get('autoria')?.touched">
       Pensamento é obrigatório!
     </div>
 
@@ -93,8 +93,13 @@
     </div>
 
     <div class="acoes">
-      <div (click)="cancelar()" class="botao">Cancelar</div>
-      <div (click)="criarPensamento()" class="botao">Salvar</div>
+      <button (click)="cancelar()" class="botao botao-cancelar">Cancelar</button>
+
+      <button
+      [disabled]="!formulario.valid"
+       (click)="criarPensamento()"
+      [ngClass]="habilitarBotao()"
+       >Salvar</button>
     </div>
   </form>
 </section>
