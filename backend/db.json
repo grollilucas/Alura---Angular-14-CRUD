@@ -1,40 +1,10 @@
 {
   "pensamentos": [
     {
-      "id": 1,
-      "conteudo": "funciona por favor",
-      "autoria": "autoria teste",
-      "modelo": "modelo1"
-    },
-    {
-      "id": 2,
-      "conteudo": "funciona aksndkansd ",
-      "autoria": "autoria testasdasdsadae",
-      "modelo": "modelo2"
-    },
-    {
-      "id": 3,
-      "conteudo": "funasdasdasdasdas ",
-      "autoria": "autoria 1234",
-      "modelo": "modelo3"
-    },
-    {
-      "conteudo": "asdas1111",
-      "autoria": "asdasas",
-      "modelo": "modelo3",
-      "id": 4
-    },
-    {
-      "conteudo": "asdas1111",
-      "autoria": "asdasas",
-      "modelo": "modelo3",
-      "id": 5
-    },
-    {
-      "conteudo": "teste1",
-      "autoria": "teste2",
-      "modelo": "modelo3",
-      "id": 6
+      "conteudo": "novo pensamento",
+      "autoria": "novo autor",
+      "modelo": "modelo2",
+      "id": 1
     }
   ]
 }
