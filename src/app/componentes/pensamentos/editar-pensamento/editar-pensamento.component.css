@@ -1,10 +1,25 @@
 .acoes {
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .botao {
   margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+  text-align: center;
+}
+
+.botao-cancelar{
+  background-color: darkgray;
+  border: 2px solid darkgray
+}
+
+.botao-cancelar:hover {
+  border: 2px solid #84EEC1;
+  color: #84EEC1;
 }
 
 .editar-pensamentos {
@@ -128,4 +143,19 @@ input[type='radio']:checked+.custom-radio {
 
 input[type='radio']:checked+.custom-radio span {
   background: #154580;
+}
+
+.mensagem__erro {
+  font-size: 12px;
+  margin-left: 5px;
+  color: red;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.botao__desabilitado {
+  margin: 5px;
+  margin-top: 70px;
+  width: 200px;
+  background-color: darkgray;
 }
