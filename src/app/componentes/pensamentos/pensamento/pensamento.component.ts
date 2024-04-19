@@ -1,34 +1,40 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pensamento } from '../pensamento';
+import { PensamentoService } from '../pensamento.service';
 
 @Component({
   selector: 'app-pensamento',
   templateUrl: './pensamento.component.html',
-  styleUrls: ['./pensamento.component.css']
+  styleUrls: ['./pensamento.component.css'],
 })
 export class PensamentoComponent implements OnInit {
-
-  @Input()  pensamento: Pensamento = {
+  @Input() pensamento: Pensamento = {
     id: 0,
     conteudo: 'Texto',
     autoria: 'Nomee',
-    modelo: 'modelo3'
-  }
+    modelo: 'modelo3',
+    favorito: false,
+  };
 
-  constructor() { }
+  constructor(private service: PensamentoService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  larguraPensamento(): string{
-    if(this.pensamento.conteudo.length >= 256 ){
-      return 'pensamento-g'
+  larguraPensamento(): string {
+    if (this.pensamento.conteudo.length >= 256) {
+      return 'pensamento-g';
+    } else {
+      return 'pensamento-p';
     }
-    else {
-      return 'pensamento-p'
-    }
-
-
   }
 
+  mudarIconeFavorito(): string{
+    if(this.pensamento.favorito == false){
+      return 'inativo'
+    } return 'ativo'
+  }
+
+  atualizarFavoritos(){
+    this.service.mudarFavorito(this.pensamento).subscribe();
+  }
 }

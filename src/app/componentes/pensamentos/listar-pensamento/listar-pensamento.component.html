@@ -2,32 +2,28 @@
   <header class="header d-flex">
 
     <div class="buscar-pensamentos">
-      <input type="search"
-      class="filtro"
-      placeholder="O que você procura?"
-      autofocus
-      [(ngModel)]="filtro"
-      (keyup)="pesquisarPensamentos()"
-      >
+      <input type="search" class="filtro" placeholder="O que você procura?" autofocus [(ngModel)]="filtro"
+        (keyup)="pesquisarPensamentos()">
       <img src="/assets/imagens/lupa.png" alt="lupa azul">
     </div>
 
     <h2 class="ff-inter">Meu Mural</h2>
-    <button routerLink="/criarPensamento" class="botao">
-      + Adicionar Pensamento
-    </button>
+
+    <div class="botoes">
+      <button class="botao">Meu Mural</button>
+      <button class="botao" (click)="listarFavoritos()" >Favoritos</button>
+      <button routerLink="/criarPensamento" class="botao">+ Novo Pensamento</button>
+    </div>
+
   </header>
   <div class="mural" *ngIf="listaPensamentos.length > 0, else semPensamentos">
     <div *ngFor="let pensamento of listaPensamentos">
-      <app-pensamento [pensamento]="pensamento" ></app-pensamento>
+      <app-pensamento [pensamento]="pensamento"></app-pensamento>
     </div>
   </div>
 </section>
 
-<app-boatao-carregar-mais
- [haMaisPensamentos]="haMaisPensamentos"
- (click)="carregarMaisPensamentos()"
- >
+<app-boatao-carregar-mais [haMaisPensamentos]="haMaisPensamentos" (click)="carregarMaisPensamentos()">
 
 </app-boatao-carregar-mais>
 
